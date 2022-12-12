@@ -1,3 +1,4 @@
+from datetime import date
 import imp
 
 
@@ -21,3 +22,6 @@ def xRefId():
     ran = ''.join(random.choices(
         string.digits + string.digits, k=count))
     return 'testing_disbursement_automation' + str(ran)
+
+def get_current_date():
+    return date.today().strftime('%d-%m-%Y')

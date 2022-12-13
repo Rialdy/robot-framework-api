@@ -7,4 +7,5 @@ Resource    ../resources/list_of_variable.robot
 
 *** Test Cases ***
 User Perform Registration With Valid Data
-    Given User registration to the system    ${name}    ${randomEmail}    ${password}
+    Given Create Random Email
+    Then User registration to the system    ${name}    ${randomEmail}    ${password}

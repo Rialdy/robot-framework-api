@@ -12,10 +12,5 @@ ${invalidEmail}=    test2@mailinator.com
 ${name}=    kid
 ${password}=    1234qwerty
 
-*** Keywords ***
-Create Random Email
-    ${randomChar}=    randNum
-    ${randomEmail}=    Set Variable    kid${randomChar}@yopmail.com
-    Set Global Variable    ${randomEmail}
     
     

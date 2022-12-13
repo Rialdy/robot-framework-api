@@ -10,6 +10,11 @@ ${baseUrl}    http://restapi.adequateshop.com
 
 
 *** Keywords ***
+Create Random Email
+    ${randomChar}=    randNum
+    ${randomEmail}=    Set Variable    kid${randomChar}@yopmail.com
+    Set Test Variable    ${randomEmail}
+
 User registration to the system
     [Arguments]    ${name}    ${email}    ${password}    
     ${randomChar}=    randNum
@@ -18,4 +23,5 @@ User registration to the system
     Create Session    Registration    ${baseUrl}
     ${registrationStep}=    POST On Session    Registration    /api/authaccount/registration    json=${body}    expected_status=Anything
     ${respondJson}=    Set Variable    ${registrationStep.json()}
+    Log To Console    ${respondJson}
     
